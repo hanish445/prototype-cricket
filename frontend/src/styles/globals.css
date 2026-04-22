@@ -1,26 +1,18 @@
 @import "tailwindcss";
 
-/* This is the new Tailwind v4 way to add custom fonts! */
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  /* Tell Tailwind to use Tourney for all headings */
+  --font-heading: var(--font-tourney), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --background: #f8fafc; /* A clean, light slate for the app background */
-  --foreground: #0f172a; /* Deep slate for text */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f172a;
-    --foreground: #f8fafc;
-  }
+  --background: #000000; /* Absolute Pitch Black */
+  --foreground: #ffffff; /* Pure White */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  /* This ensures the whole app uses our clean Inter font by default */
   font-family: var(--font-sans);
 }

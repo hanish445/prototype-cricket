@@ -1,75 +1,145 @@
-// frontend/src/pages/roster.tsx
 import Head from 'next/head';
 import { players } from '@/data/mockData';
-import { User, Activity, Target, Shield } from 'lucide-react';
+import { User, Crosshair, Target, Shield, Activity, Trophy } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
 
 export default function Roster() {
-    // A helper function to assign different colors based on the player's role
     const getRoleBadgeColor = (role: string) => {
         switch (role) {
-            case 'Batter': return 'bg-blue-100 text-blue-800 border-blue-200';
-            case 'Bowler': return 'bg-red-100 text-red-800 border-red-200';
-            case 'All-rounder': return 'bg-purple-100 text-purple-800 border-purple-200';
-            case 'Wicket-keeper': return 'bg-amber-100 text-amber-800 border-amber-200';
-            default: return 'bg-gray-100 text-gray-800 border-gray-200';
+            case 'Batter': return 'bg-white text-black';
+            case 'Bowler': return 'bg-red-600 text-white';
+            case 'All-rounder': return 'bg-cyan-500 text-black';
+            case 'Wicket-keeper': return 'bg-zinc-700 text-white';
+            default: return 'bg-zinc-800 text-white';
         }
+    };
+
+    const container: Variants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 }
+        }
+    };
+
+    const item: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
     };
 
     return (
         <>
             <Head>
-                <title>Cricket Club | Roster</title>
+                <title>DORTMUND CXI | SQUAD</title>
             </Head>
 
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">First XI Squad</h1>
-                    <p className="text-lg text-slate-600">Meet the players defending our home ground this season.</p>
-                </div>
+            <div className="bg-black min-h-screen py-16 px-4 sm:px-6 lg:px-8 border-t border-zinc-900">
+                <div className="max-w-7xl mx-auto">
 
-                {/* Player Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {players.map((player) => (
-                        <div key={player.id} className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                    >
+                        <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">2026 <span className="text-cyan-400">Squad</span></h1>
+                        <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">Finalised Squad for 2026 season</p>
+                    </motion.div>
 
-                            {/* Card Header (Avatar & Name) */}
-                            <div className="bg-slate-50 p-6 flex flex-col items-center border-b border-gray-100">
-                                <div className="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center mb-4 text-slate-400">
-                                    <User size={40} />
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    >
+                        {players.map((player: any) => (
+                            <motion.div
+                                key={player.id}
+                                variants={item}
+                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-cyan-500 transition-colors duration-200 group relative overflow-hidden flex flex-col"
+                            >
+
+                                {/* ID Number */}
+                                <div className="absolute top-4 left-4 text-zinc-700 font-heading text-3xl opacity-50 z-0 group-hover:text-cyan-900 transition-colors">
+                                    {String(player.id).padStart(2, '0')}
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 text-center">{player.name}</h3>
-                                <span className={`mt-2 px-3 py-1 text-xs font-semibold rounded-full border ${getRoleBadgeColor(player.role)}`}>
-                  {player.role}
-                </span>
-                            </div>
 
-                            {/* Card Body (Stats) */}
-                            <div className="p-6">
-                                <ul className="space-y-3 text-sm text-slate-600">
-                                    <li className="flex items-center gap-2">
-                                        <Activity className="w-4 h-4 text-emerald-500" />
-                                        <strong>Matches:</strong> {player.stats.matches}
-                                    </li>
+                                {/* Header Profile Section */}
+                                <div className="p-8 pb-6 flex flex-col items-center border-b border-zinc-800 relative z-10 bg-zinc-900/50 group-hover:bg-zinc-900 transition-colors">
+                                    <div className="w-20 h-20 bg-zinc-950 border-2 border-zinc-700 flex items-center justify-center mb-6 text-zinc-500 group-hover:text-cyan-400 group-hover:border-cyan-500 transition-colors">
+                                        <User size={32} />
+                                    </div>
+                                    <h3 className="font-heading text-2xl text-white text-center uppercase tracking-wide leading-none">{player.name}</h3>
 
-                                    {/* Conditionally render stats based on role */}
-                                    {player.stats.runs && (
-                                        <li className="flex items-center gap-2">
-                                            <Target className="w-4 h-4 text-blue-500" />
-                                            <strong>Average:</strong> {player.stats.average}
-                                        </li>
-                                    )}
+                                    <span className={`mt-4 px-3 py-1 text-xs font-bold uppercase tracking-widest ${getRoleBadgeColor(player.role)}`}>
+                                        {player.role}
+                                    </span>
 
-                                    {player.stats.wickets && (
-                                        <li className="flex items-center gap-2">
-                                            <Shield className="w-4 h-4 text-red-500" />
-                                            <strong>Wickets:</strong> {player.stats.wickets}
-                                        </li>
-                                    )}
-                                </ul>
-                            </div>
+                                    {/* Added Batting/Bowling Styles as Sub-data */}
+                                    <div className="mt-4 text-center flex flex-col gap-1">
+                                        {player.battingStyle && <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{player.battingStyle}</span>}
+                                        {player.bowlingStyle && <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{player.bowlingStyle}</span>}
+                                    </div>
+                                </div>
 
-                        </div>
-                    ))}
+                                {/* Detailed Stats Section */}
+                                <div className="p-6 flex-grow flex flex-col justify-end">
+                                    <ul className="space-y-0 text-sm text-zinc-400 uppercase tracking-widest font-bold">
+
+                                        {player.stats.matches !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Crosshair className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> MATCHES</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.matches}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.runs !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> RUNS</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.runs}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.highScore !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> HIGH SCORE</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.highScore}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.average !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Target className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> AVERAGE</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.average}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.wickets !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Shield className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> WICKETS</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.wickets}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.bestBowling !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> BEST BOWL</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.bestBowling}</span>
+                                            </li>
+                                        )}
+
+                                        {player.stats.economy !== undefined && (
+                                            <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
+                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> ECONOMY</span>
+                                                <span className="text-white font-heading text-xl">{player.stats.economy}</span>
+                                            </li>
+                                        )}
+
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </>

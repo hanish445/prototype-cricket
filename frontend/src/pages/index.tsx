@@ -1,87 +1,69 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { ArrowRight, Calendar, Users, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
       <>
         <Head>
-          <title>Dortmund CC | Home</title>
+          <title>DORTMUND CXI</title>
         </Head>
 
-        {/* Hero Section: Deep Slate & Emerald */}
-        <section className="relative bg-slate-900 text-white py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center overflow-hidden">
-          {/* Subtle Pitch Green Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-
+        {/* Hero Section: Absolute Black & Cyan Brutalist Lines */}
+        <section className="relative bg-black text-white py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center overflow-hidden border-b-[12px] border-cyan-500">
           <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10 flex flex-col items-center max-w-4xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative z-10 flex flex-col items-center max-w-5xl"
           >
-            {/* Using the new Oswald font for the main title */}
-            <h1 className="font-heading text-6xl md:text-8xl font-bold tracking-tight mb-6 uppercase">
-              Welcome to <br />
-              <span className="text-emerald-400">Dortmund CC</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-12 font-light leading-relaxed">
-              Step onto the pitch. Whether you are a seasoned all-rounder, a hostile fast bowler, or a passionate supporter, we are building a legacy that respects the game.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Link href="/roster" passHref>
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-10 py-4 rounded-full font-bold tracking-wide transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
-                >
-                  <Users className="w-5 h-5" />
-                  MEET THE SQUAD
-                </motion.button>
-              </Link>
-              <Link href="/fixtures" passHref>
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-slate-800/50 hover:bg-slate-800 border border-slate-600 backdrop-blur-md text-white px-10 py-4 rounded-full font-bold tracking-wide transition-all flex items-center justify-center gap-3"
-                >
-                  <Calendar className="w-5 h-5" />
-                  MATCH CENTER
-                </motion.button>
-              </Link>
+            {/* Subheading tag */}
+            <div className="bg-white text-black font-bold tracking-widest text-sm px-3 py-1 mb-6 uppercase flex items-center gap-2">
+              <span>EST. 2024</span>
+              <div className="w-4 h-4 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#000_2px,#000_4px)]"></div>
             </div>
+
+            <h1 className="font-heading text-7xl md:text-[9rem] leading-[0.85] tracking-tighter mb-8 uppercase text-white">
+              DORTMUND <br />
+              <span className="text-cyan-400">CRICKET XI</span>
+            </h1>
           </motion.div>
         </section>
+        <section className="bg-zinc-950 py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative overflow-hidden">
+          {/* Subtle background grid pattern for the tech vibe */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-        {/* Quick Info Cards */}
-        <section className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 relative -mt-16 z-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
-            {[
-              { icon: Calendar, title: "NEXT FIXTURE", desc: "Saturday, 2:00 PM vs. The Invincibles", link: "/fixtures", linkText: "Match Center" },
-              { icon: Users, title: "JOIN THE SQUAD", desc: "We are currently scouting fast bowlers and top-order batters for the new season.", link: "/contact", linkText: "Register Interest" },
-              { icon: TrendingUp, title: "PLAYER STATS", desc: "Track batting averages, strike rates, and bowling economies.", link: "/roster", linkText: "View Leaderboards" }
-            ].map((card, index) => (
-                <motion.div
-                    key={card.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                    className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col items-center text-center group"
-                >
-                  <div className="bg-slate-50 p-5 rounded-full mb-6 group-hover:bg-emerald-50 transition-colors duration-300">
-                    <card.icon className="w-8 h-8 text-emerald-600" />
-                  </div>
-                  <h3 className="font-heading text-2xl mb-3 text-slate-900 tracking-wide">{card.title}</h3>
-                  <p className="text-slate-600 mb-8 leading-relaxed">{card.desc}</p>
-                  <Link href={card.link} className="text-emerald-600 font-bold uppercase tracking-wider text-sm hover:text-emerald-700 flex items-center gap-2 mt-auto">
-                    {card.linkText} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </motion.div>
-            ))}
+              {/* Left Column: Massive Establishing Text */}
+              <div className="lg:col-span-5 flex flex-col justify-center border-l-8 border-cyan-500 pl-8">
+                <h2 className="font-heading text-5xl md:text-6xl text-white tracking-tighter uppercase leading-none mb-6">
+                  FROM SUNDAY <br />
+                  <span className="text-zinc-600">RITUAL TO</span> <br />
+                  <span className="text-cyan-400">RELENTLESS</span> <br />
+                  PURSUIT
+                </h2>
+              </div>
 
+              {/* Right Column: The Conviction / Copy */}
+              <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-lg">
+
+                <div className="bg-black border border-zinc-800 p-8 hover:border-zinc-700 transition-colors">
+                  <p className="text-zinc-300 leading-relaxed font-light tracking-wide">
+                    <strong className="text-white font-bold tracking-widest uppercase text-sm mr-2">PHASE 01: THE ROOTS.</strong>
+                    It didn't start in a corporate boardroom or a state-of-the-art academy. Dortmund Cricket XI was born on Sunday mornings. We were a collective of players driven by a shared obsession for the game, playing for fun, pride, and the love of the sport. But as the weekends passed, the competitive drive demanded more than just a casual hit.
+                  </p>
+                </div>
+
+                <div className="bg-black border border-zinc-800 p-8 border-l-4 border-l-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.05)]">
+                  <p className="text-zinc-300 leading-relaxed font-light tracking-wide">
+                    <strong className="text-cyan-400 font-bold tracking-widest uppercase text-sm mr-2">PHASE 02: THE DIRECTIVE.</strong>
+                    In 2026, we formalized the vision. We evolved from weekend warriors into a disciplined, tactical unit. Our goal is absolute: to elevate the standard of local cricket, foster raw talent, and build a brotherhood that plays a fierce, uncompromising brand of cricket. We aren't just here to participate. We are building a system designed to dominate.
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
         </section>
       </>

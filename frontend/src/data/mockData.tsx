@@ -1,32 +1,32 @@
 export const players = [
     {
         id: 1,
-        name: "Marcus Thorne",
+        name: "Atif Ibrar",
         role: "Batter",
         battingStyle: "Right-hand bat",
         stats: { matches: 42, runs: 1450, average: 38.5, highScore: 112 },
     },
     {
         id: 2,
-        name: "Zain Ali",
+        name: "Varun Tyagi",
         role: "Bowler",
         bowlingStyle: "Right-arm fast",
         stats: { matches: 35, wickets: 78, economy: 4.2, bestBowling: "5/24" },
     },
     {
         id: 3,
-        name: "David Chen",
+        name: "Srikanth Kodela",
         role: "All-rounder",
-        battingStyle: "Left-hand bat",
-        bowlingStyle: "Slow left-arm orthodox",
+        battingStyle: "Right-hand bat",
+        bowlingStyle: "Slow right-arm orthodox",
         stats: { matches: 50, runs: 980, wickets: 45, average: 28.4 },
     },
     {
         id: 4,
-        name: "Liam O'Connor",
-        role: "Wicket-keeper",
-        battingStyle: "Right-hand bat",
-        stats: { matches: 60, catches: 85, stumpings: 22, average: 25.1 },
+        name: "Akash Kanojiya",
+        role: "Bowler",
+        battingStyle: "Right-hand medium",
+        stats: { matches: 60, wickets: 30, economy: 9.8, bestBowling: "3/40" },
     }
 ];
 
