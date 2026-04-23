@@ -12,6 +12,7 @@ export default function Navbar() {
         { name: 'FIXTURES', href: '/fixtures' },
         { name: 'SQUAD', href: '/roster' },
         { name: 'CONTACT', href: '/contact' },
+        { name: 'JOIN US', href: '/join'}
     ];
 
     return (
