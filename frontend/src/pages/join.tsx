@@ -1,16 +1,64 @@
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
 import { Send, Info, CheckCircle, CreditCard } from 'lucide-react';
+import { useState } from 'react';
 
 export default function JoinUs() {
+    const [status, setStatus] = useState('IDLE');
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        // THE FIX: Capture the form reference immediately, before any 'await'
+        const form = e.currentTarget;
+
+        setStatus('SUBMITTING');
+
+        const formData = new FormData(form);
+        // Replace with your actual Web3Forms Access Key!
+        formData.append("access_key", "1d1052ea-990c-4743-a3e0-ad81317e7293");
+        formData.append("subject", "New Dortmund CXI Player Enrollment");
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: json
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus('SUCCESS');
+                // Use the captured reference here!
+                form.reset();
+                setTimeout(() => setStatus('IDLE'), 3000);
+            } else {
+                console.log("Server rejected payload:", data);
+                setStatus('ERROR');
+            }
+        } catch (error) {
+            console.error("Network or parsing error:", error);
+            setStatus('ERROR');
+        }
+    };
+
     const container: Variants = {
         hidden: {opacity: 0},
         show: {opacity: 1, transition: {staggerChildren: 0.1}},
     };
+
     const item: Variants = {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
     };
+
     const fees = [
         { type: "FULL MEMBER", price: "€25", interval: "One time", specs: "Full match access + training" },
         { type: "STUDENT / YOUTH", price: "€15", interval: "One time", specs: "Valid ID required" },
@@ -72,45 +120,52 @@ export default function JoinUs() {
                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
                             className="lg:col-span-7 bg-zinc-950 border-2 border-zinc-800 p-8 md:p-12 relative"
                         >
-                            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Full Name</label>
-                                        <input type="text" placeholder="ENTRY NAME" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
+                                        <input name="name" type="text" required placeholder="ENTRY NAME" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Email Address</label>
-                                        <input type="email" placeholder="EMAIL@DOMAIN.COM" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
+                                        <input name="email" type="email" required placeholder="EMAIL@DOMAIN.COM" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Primary Role</label>
-                                        <select className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
-                                            <option>BATTER</option>
-                                            <option>BOWLER</option>
-                                            <option>ALL-ROUNDER</option>
-                                            <option>WICKET-KEEPER</option>
+                                        <select name="role" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
+                                            <option value="Batter">BATTER</option>
+                                            <option value="Bowler">BOWLER</option>
+                                            <option value="All-Rounder">ALL-ROUNDER</option>
+                                            <option value="Wicket-Keeper">WICKET-KEEPER</option>
                                         </select>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Experience Level</label>
-                                        <select className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
-                                            <option>AMATEUR</option>
-                                            <option>INTERMEDIATE</option>
-                                            <option>ADVANCED / PRO</option>
+                                        <select name="experience" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
+                                            <option value="Amateur">AMATEUR</option>
+                                            <option value="Intermediate">INTERMEDIATE</option>
+                                            <option value="Advanced / Pro">ADVANCED / PRO</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
                                     <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Message / Notes</label>
-                                    <textarea rows={4} placeholder="ANY ADDITIONAL INFORMATION..." className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans resize-none"></textarea>
+                                    <textarea name="message" rows={4} placeholder="ANY ADDITIONAL INFORMATION..." className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans resize-none"></textarea>
                                 </div>
 
-                                <button type="button" className="w-full bg-cyan-500 text-black py-5 font-heading text-2xl uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all shadow-[0_0_30px_rgba(6,182,212,0.1)] group">
-                                    SUBMIT FORM <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                <button
+                                    type="submit"
+                                    disabled={status === 'SUBMITTING' || status === 'SUCCESS'}
+                                    className="w-full bg-cyan-500 text-black py-5 font-heading text-2xl uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all shadow-[0_0_30px_rgba(6,182,212,0.1)] group disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {status === 'IDLE' && <>SUBMIT FORM <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" /></>}
+                                    {status === 'SUBMITTING' && 'TRANSMITTING...'}
+                                    {status === 'SUCCESS' && <>RECEIVED <CheckCircle className="w-6 h-6" /></>}
+                                    {status === 'ERROR' && 'ERROR - TRY AGAIN'}
                                 </button>
                             </form>
                         </motion.div>
