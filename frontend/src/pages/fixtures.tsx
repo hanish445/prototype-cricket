@@ -27,7 +27,7 @@ export default function Fixtures() {
     return (
         <>
             <Head>
-                <title>DORTMUND CC | MATCH CENTER</title>
+                <title>DORTMUND CXI | MATCH CENTER</title>
             </Head>
 
             <div className="bg-black min-h-screen py-16 px-4 sm:px-6 lg:px-8 border-t border-zinc-900">

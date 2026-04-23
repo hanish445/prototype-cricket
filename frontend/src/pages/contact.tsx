@@ -39,7 +39,7 @@ export default function Contact() {
     return (
         <>
             <Head>
-                <title>DORTMUND CC | COMMS</title>
+                <title>DORTMUND CXI | CONTACTS</title>
             </Head>
 
             <div className="bg-black min-h-screen py-16 px-4 sm:px-6 lg:px-8 border-t border-zinc-900">

@@ -1,15 +1,20 @@
-import Navbar from  "./Navbar"
+import Navbar from './Navbar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="flex flex-col min-h-screen bg-black text-white font-sans">
             <Navbar />
+
+            {/* Main Page Content */}
             <main className="flex-grow">
                 {children}
             </main>
-            {/* We can add a Footer here later! */}
-            <footer className="bg-slate-900 text-slate-400 text-center py-4 text-sm mt-auto">
-                © {new Date().getFullYear()} Cricket Club. All rights reserved.
+
+            {/* New Minimal Cyber Footer */}
+            <footer className="bg-black border-t border-zinc-900 py-8 px-4 text-center">
+                <p className="text-zinc-600 font-bold uppercase tracking-widest text-[10px]">
+                    © {new Date().getFullYear()} DORTMUND CRICKET XI. ALL RIGHTS RESERVED.
+                </p>
             </footer>
         </div>
     );

@@ -8,7 +8,7 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navLinks = [
-        { name: 'HOME', href: '/' },
+        { name: 'ABOUT US', href: '/about' },
         { name: 'FIXTURES', href: '/fixtures' },
         { name: 'SQUAD', href: '/roster' },
         { name: 'CONTACT', href: '/contact' },
