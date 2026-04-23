@@ -8,7 +8,6 @@ export default function Home() {
           <title>DORTMUND CXI</title>
         </Head>
 
-        {/* Hero Section: Absolute Black & Cyan Brutalist Lines */}
         <section className="relative bg-black text-white py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center overflow-hidden border-b-[12px] border-cyan-500">
           <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -22,10 +21,11 @@ export default function Home() {
               <div className="w-4 h-4 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#000_2px,#000_4px)]"></div>
             </div>
 
-            <h1 className="font-heading text-7xl md:text-[9rem] leading-[0.85] tracking-tighter mb-8 uppercase text-white">
-              DORTMUND <br />
-              <span className="text-cyan-400">CRICKET XI</span>
-            </h1>
+            <img
+                src="/images/dortmund-crest.png"
+                alt="Dortmund Cricket XI Crest"
+                className="w-full max-w-[280px] md:max-w-[450px] object-contain mb-12 rounded-2xl"
+            />
           </motion.div>
         </section>
         <section className="bg-zinc-950 py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative overflow-hidden">

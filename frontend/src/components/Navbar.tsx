@@ -20,14 +20,11 @@ export default function Navbar() {
         <nav className="bg-black text-white border-b border-zinc-900 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
-
-                    {/* Logo Section */}
                     <div className="flex items-center">
-                        <Link href="/" className="flex items-center space-x-3 group">
-                            <Activity className="h-8 w-8 text-cyan-500 group-hover:text-cyan-400 transition-colors" />
-                            <span className="font-heading font-bold text-3xl tracking-tighter uppercase text-white group-hover:text-cyan-400 transition-colors">
-                DORTMUND <span className="text-zinc-600">Cricket XI</span>
-              </span>
+                        <Link href="/" className="flex items-center group">
+                            <span className="font-heading font-bold text-2xl md:text-3xl tracking-tighter uppercase text-white group-hover:text-cyan-400 transition-colors">
+                                    DORTMUND <span className="text-zinc-600">CRICKET XI</span>
+                            </span>
                         </Link>
                     </div>
 
