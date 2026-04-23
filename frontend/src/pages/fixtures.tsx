@@ -5,10 +5,14 @@ import { motion, Variants } from 'framer-motion';
 export default function Fixtures() {
     // Mock data for upcoming matches
     const matches = [
-        { id: '01', date: 'MAY 12, 2026', time: '14:00', opponent: 'THE INVINCIBLES', venue: 'HOME GROUND', type: 'LEAGUE MATCH' },
-        { id: '02', date: 'MAY 19, 2026', time: '10:00', opponent: 'BOCHUM BLASTERS', venue: 'AWAY (BOCHUM OVAL)', type: 'LEAGUE MATCH' },
-        { id: '03', date: 'MAY 26, 2026', time: '15:30', opponent: 'ESSEN EAGLES', venue: 'HOME GROUND', type: 'T20 CUP' },
-        { id: '04', date: 'JUN 02, 2026', time: '13:00', opponent: 'COLOGNE KINGS', venue: 'AWAY (RHEIN PARK)', type: 'LEAGUE MATCH' },
+        {
+            id: 'TBD',
+            date: 'SUMMER 2026',
+            time: 'TBA',
+            opponent: 'SCHEDULE PENDING',
+            venue: 'TREMONIA PARK',
+            type: 'LEAGUE MATCHES'
+        }
     ];
 
     const container: Variants = {
