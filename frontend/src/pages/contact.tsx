@@ -3,25 +3,66 @@ import { Phone, Mail, Clock } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 
 export default function Contact() {
-    // The club administration directory
+    // The club administration directory with INDIVIDUAL contact details
     const directory = [
-        { id: '01', name: 'Shekar Madasu', role: 'President' },
-        { id: '02', name: 'Aman Batra', role: 'Vice President' },
-        { id: '03', name: 'Gifty Kurian', role: 'Treasurer' },
-        { id: '04', name: 'Mayank Upadhay', role: 'Marketing' },
-        { id: '05', name: 'Sachin Kharinar', role: 'Tournament Coordinator' },
-        { id: '06', name: 'Dharmaraju Nalliboyana', role: 'Event' },
-        { id: '07', name: 'Ubed Sheik', role: 'Ground Management' },
+        {
+            id: '01',
+            name: 'Shekar Madasu',
+            role: 'President',
+            phone: '+49 162 6430936',
+            email: 'shekar3m@gmail.com',
+            timings: '18:00 - 20:00'
+        },
+        {
+            id: '02',
+            name: 'Aman Batra',
+            role: 'Vice President',
+            phone: '+49 176 37006828',
+            email: 'amam.pmp@gmail.com',
+            timings: '18:00 - 20:00'
+        },
+        {
+            id: '03',
+            name: 'Gifty Kurian',
+            role: 'Treasurer',
+            phone: '+49 162 2830052',
+            email: 'drgiftykurian@gmail.com',
+            timings: '17:00 - 19:00'
+        },
+        {
+            id: '04',
+            name: 'Mayank Upadhay',
+            role: 'Marketing',
+            phone: '+49 176 61256057',
+            email: 'Mayank17u@gmail.com',
+            timings: '10:00 - 18:00'
+        },
+        {
+            id: '05',
+            name: 'Sachin Kharinar',
+            role: 'Tournament Coordinator',
+            phone: '+91 83790 68756',
+            email: 'Sachinskharinar05@gmail.com',
+            timings: '16:00 - 20:00'
+        },
+        {
+            id: '06',
+            name: 'Dharmaraju Nalliboyana',
+            role: 'Event',
+            phone: '+49 176 42410993',
+            email: 'drajugn@yahoo.com',
+            timings: '18:00 - 19:00'
+        },
+        {
+            id: '07',
+            name: 'Ubed Shaikh',
+            role: 'Ground Management',
+            phone: '+91 89834 98349',
+            email: 'ubedshaikh76@gmail.com',
+            timings: '09:00 - 17:00'
+        },
     ];
 
-    // Universal contact details requested for the prototype
-    const contactInfo = {
-        phone: '+49 123 45678910',
-        email: 'abcd-dortmundcxi@gmail.com',
-        timings: '6:00 PM - 7:00 PM',
-    };
-
-    // ADDED ": Variants" HERE
     const container: Variants = {
         hidden: { opacity: 0 },
         show: {
@@ -30,7 +71,6 @@ export default function Contact() {
         }
     };
 
-    // ADDED ": Variants" HERE
     const item: Variants = {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
@@ -89,22 +129,22 @@ export default function Contact() {
                                     </span>
                                 </div>
 
-                                {/* Card Body (Contact Details) */}
+                                {/* Card Body (Contact Details mapping to individual object) */}
                                 <div className="p-6 flex-grow flex flex-col justify-end bg-black">
                                     <ul className="space-y-4 text-sm text-zinc-400 uppercase tracking-widest font-bold">
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
                                             <Phone className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
-                                            <span className="font-sans">{contactInfo.phone}</span>
+                                            <span className="font-sans">{person.phone}</span>
                                         </li>
 
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
                                             <Mail className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
-                                            <span className="font-sans lowercase tracking-wider">{contactInfo.email}</span>
+                                            <span className="font-sans lowercase tracking-wider">{person.email}</span>
                                         </li>
 
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
                                             <Clock className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
-                                            <span className="font-sans">{contactInfo.timings}</span>
+                                            <span className="font-sans">{person.timings}</span>
                                         </li>
                                     </ul>
                                 </div>
