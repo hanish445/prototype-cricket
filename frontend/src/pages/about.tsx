@@ -117,7 +117,7 @@ export default function About() {
                         className="mt-24 text-center border-t border-zinc-900 pt-12"
                     >
                         <p className="text-zinc-500 font-bold tracking-[0.5em] text-xs uppercase">
-                            Join the evolution. Open to new players.
+                            Join the evolution. Open to new players
                         </p>
                     </motion.div>
                 </div>

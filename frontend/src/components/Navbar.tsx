@@ -9,6 +9,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'ABOUT US', href: '/about' },
+        { name: 'TRAINING', href: '/training' },
         { name: 'FIXTURES', href: '/fixtures' },
         { name: 'SQUAD', href: '/roster' },
         { name: 'CONTACT', href: '/contact' },
