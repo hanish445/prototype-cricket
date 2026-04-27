@@ -22,7 +22,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center group">
-                            <span className="font-heading font-bold text-2xl md:text-3xl tracking-tighter uppercase text-white group-hover:text-cyan-400 transition-colors">
+                            <span className="font-heading font-bold text-2xl md:text-3xl tracking-tighter uppercase text-white group-hover:text-yellow-400 transition-colors">
                                     DORTMUND <span className="text-zinc-600">CRICKET XI</span>
                             </span>
                         </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-zinc-400 hover:text-cyan-400 uppercase tracking-widest text-sm font-bold transition-colors"
+                                    className="text-zinc-400 hover:text-yellow-400 uppercase tracking-widest text-sm font-bold transition-colors"
                                 >
                                     {link.name}
                                 </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
                     <div className="-mr-2 flex md:hidden">
                         <button
                             onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 text-zinc-500 hover:text-cyan-400 focus:outline-none transition-colors"
+                            className="inline-flex items-center justify-center p-2 text-zinc-500 hover:text-yellow-400 focus:outline-none transition-colors"
                         >
                             {isOpen ? <X className="block h-8 w-8" /> : <Menu className="block h-8 w-8" />}
                         </button>
@@ -63,7 +63,7 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900 block px-4 py-4 text-sm font-bold uppercase tracking-widest transition-colors border-b border-zinc-900/50"
+                                className="text-zinc-400 hover:text-yellow-400 hover:bg-zinc-900 block px-4 py-4 text-sm font-bold uppercase tracking-widest transition-colors border-b border-zinc-900/50"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}

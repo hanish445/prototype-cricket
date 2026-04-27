@@ -10,7 +10,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {children}
             </main>
 
-            {/* New Minimal Cyber Footer */}
             <footer className="bg-black border-t border-zinc-900 py-10 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
 
@@ -22,14 +21,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <nav className="flex gap-8">
                         <a
                             href="/impressum"
-                            className="text-zinc-500 hover:text-cyan-400 font-bold uppercase tracking-[0.2em] text-[10px] transition-colors"
+                            className="text-zinc-500 hover:text-yellow-400 font-bold uppercase tracking-[0.2em] text-[10px] transition-colors"
                         >
                             Impressum
                         </a>
                         {/* Pro-Tip: Add this placeholder now, you will need a Privacy Policy later too */}
                         <a
                             href="/datenschutz"
-                            className="text-zinc-500 hover:text-cyan-400 font-bold uppercase tracking-[0.2em] text-[10px] transition-colors"
+                            className="text-zinc-500 hover:text-yellow-400 font-bold uppercase tracking-[0.2em] text-[10px] transition-colors"
                         >
                             Datenschutz
                         </a>

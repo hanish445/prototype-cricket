@@ -42,10 +42,10 @@ export default function Fixtures() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                        className="mb-16 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">
-                            Match <span className="text-cyan-400">Center</span>
+                            Match <span className="text-yellow-400">Center</span>
                         </h1>
                         <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">
                             Official fixture list for the 2026 season.
@@ -63,13 +63,13 @@ export default function Fixtures() {
                             <motion.div
                                 key={match.id}
                                 variants={item}
-                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-cyan-500 transition-all duration-200 group flex flex-col md:flex-row items-start md:items-center relative"
+                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-yellow-500 transition-all duration-200 group flex flex-col md:flex-row items-start md:items-center relative"
                             >
 
                                 {/* Date Block */}
-                                <div className="w-full md:w-48 bg-zinc-900/50 p-6 md:p-8 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-zinc-800 group-hover:bg-cyan-500/5 transition-colors">
+                                <div className="w-full md:w-48 bg-zinc-900/50 p-6 md:p-8 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-zinc-800 group-hover:bg-yellow-500/5 transition-colors">
                                     <h3 className="font-heading text-3xl text-white tracking-wider leading-none mb-2">{match.date}</h3>
-                                    <div className="flex items-center gap-2 text-cyan-400 font-bold tracking-widest text-sm">
+                                    <div className="flex items-center gap-2 text-yellow-400 font-bold tracking-widest text-sm">
                                         <Calendar className="w-4 h-4" /> {match.time}
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@ export default function Fixtures() {
 
                                 {/* Status Badge */}
                                 <div className="absolute top-4 right-4 md:static md:pr-8">
-                   <span className="inline-block px-3 py-1 bg-zinc-900 text-zinc-500 text-xs font-bold uppercase tracking-widest border border-zinc-800 group-hover:border-cyan-500/50 group-hover:text-cyan-400 transition-colors">
+                   <span className="inline-block px-3 py-1 bg-zinc-900 text-zinc-500 text-xs font-bold uppercase tracking-widest border border-zinc-800 group-hover:border-yellow-500/50 group-hover:text-yellow-400 transition-colors">
                     UPCOMING
                   </span>
                                 </div>

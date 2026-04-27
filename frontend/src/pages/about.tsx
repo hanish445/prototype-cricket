@@ -33,10 +33,10 @@ export default function About() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="mb-20 border-l-8 border-cyan-500 pl-6"
+                        className="mb-20 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-8xl font-bold text-white uppercase tracking-tighter leading-none">
-                            Cricket <br /> With <span className="text-cyan-400">Purpose</span>
+                            Cricket <br /> With <span className="text-yellow-400">Purpose</span>
                         </h1>
                     </motion.div>
 
@@ -44,25 +44,14 @@ export default function About() {
                         {/* The Founding Vision */}
                         <motion.div
                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-                            className="lg:col-span-7 space-y-8"
+                            className="lg:col-span-7 flex flex-col justify-center space-y-8"
                         >
                             <div className="space-y-6">
-                                <h2 className="font-heading text-3xl text-white uppercase tracking-widest">Foundation Alpha</h2>
+                                <h2 className="font-heading text-3xl text-white uppercase tracking-widest">Our Foundation</h2>
                                 <p className="text-zinc-400 text-xl leading-relaxed font-light">
                                     Dortmund Cricket XI was founded to promote cricket as a premier sport in Germany.
                                     We welcome people from all backgrounds who want to play, learn, and grow together,
                                     fostering a space where community and cultural connection thrive on and off the pitch.
-                                </p>
-                            </div>
-
-                            <div className="p-8 bg-zinc-900/30 border-l-4 border-cyan-500 border-y border-r border-zinc-800">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <Target className="text-cyan-400 w-8 h-8" />
-                                    <h3 className="font-heading text-2xl text-white uppercase">League Ambition</h3>
-                                </div>
-                                <p className="text-zinc-500 uppercase tracking-wider leading-relaxed">
-                                    Our long-term directive is absolute: To compete and excel in regional and national
-                                    cricket leagues across Germany, establishing Dortmund as a hub for elite cricket talent.
                                 </p>
                             </div>
                         </motion.div>
@@ -70,10 +59,10 @@ export default function About() {
                         {/* Club Highlights Sidebar */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}
-                            className="lg:col-span-5 bg-cyan-500/5 border-2 border-cyan-500/20 p-8 relative overflow-hidden"
+                            className="lg:col-span-5 bg-yellow-500/5 border-2 border-yellow-500/20 p-8 relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-4 opacity-10">
-                                <ShieldCheck size={120} className="text-cyan-500" />
+                                <ShieldCheck size={120} className="text-yellow-500" />
                             </div>
                             <h3 className="font-heading text-3xl text-white uppercase mb-8 relative z-10">Club Highlights</h3>
                             <ul className="space-y-6 relative z-10">
@@ -82,10 +71,10 @@ export default function About() {
                                     "Quarterly financial reporting",
                                     "Weekly cricket activity",
                                     "Transparent player selection committee",
-                                    "Focus on league participation"
+                                    "Focus on community growth"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-4 text-zinc-300 font-bold uppercase tracking-widest text-xs">
-                                        <span className="text-cyan-500 mt-1"></span> {item}
+                                        <span className="text-yellow-500 mt-1"></span> {item}
                                     </li>
                                 ))}
                             </ul>
@@ -100,9 +89,9 @@ export default function About() {
                         {pillars.map((pillar, idx) => (
                             <motion.div
                                 key={idx} variants={item}
-                                className="bg-zinc-950 border border-zinc-800 p-8 group hover:border-cyan-500 transition-all duration-300"
+                                className="bg-zinc-950 border border-zinc-800 p-8 group hover:border-yellow-500 transition-all duration-300"
                             >
-                                <pillar.icon className="text-zinc-700 group-hover:text-cyan-400 w-10 h-10 mb-6 transition-colors" />
+                                <pillar.icon className="text-zinc-700 group-hover:text-yellow-400 w-10 h-10 mb-6 transition-colors" />
                                 <h4 className="font-heading text-2xl text-white mb-4 uppercase tracking-widest">{pillar.title}</h4>
                                 <p className="text-zinc-500 text-sm leading-relaxed uppercase tracking-wide">
                                     {pillar.desc}

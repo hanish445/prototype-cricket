@@ -76,10 +76,10 @@ export default function JoinUs() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="mb-12 border-l-8 border-cyan-500 pl-6"
+                        className="mb-12 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-7xl font-bold text-white uppercase tracking-tighter">
-                            Enrollment <span className="text-cyan-400">Page</span>
+                            Enrollment <span className="text-yellow-400">Page</span>
                         </h1>
                     </motion.div>
 
@@ -91,7 +91,7 @@ export default function JoinUs() {
                         >
                             <div className="bg-zinc-900/50 border border-zinc-800 p-6">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <CreditCard className="text-cyan-500 w-6 h-6" />
+                                    <CreditCard className="text-yellow-500 w-6 h-6" />
                                     <h3 className="font-heading text-2xl text-white uppercase tracking-wide">FEE STRUCTURE</h3>
                                 </div>
 
@@ -100,15 +100,15 @@ export default function JoinUs() {
                                         <div key={idx} className="border-b border-zinc-800 pb-4 last:border-0">
                                             <div className="flex justify-between items-end mb-1">
                                                 <span className="text-white font-bold tracking-widest text-sm">{fee.type}</span>
-                                                <span className="text-cyan-400 font-heading text-2xl">{fee.price}</span>
+                                                <span className="text-yellow-400 font-heading text-2xl">{fee.price}</span>
                                             </div>
                                             <p className="text-zinc-500 text-[10px] uppercase tracking-widest">{fee.specs}</p>
                                         </div>
                                     ))}
                                 </div>
 
-                                <div className="mt-8 p-4 bg-cyan-500/5 border border-cyan-500/20 flex gap-4 items-start">
-                                    <Info className="text-cyan-500 w-8 h-8 shrink-0" />
+                                <div className="mt-8 p-4 bg-yellow-500/5 border border-yellow-500/20 flex gap-4 items-start">
+                                    <Info className="text-yellow-500 w-8 h-8 shrink-0" />
                                     <p className="text-zinc-400 text-xs leading-relaxed uppercase tracking-wider">
                                         All applications are reviewed by the board. Payment is only required once your membership is authorized.
                                     </p>
@@ -124,18 +124,18 @@ export default function JoinUs() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Full Name</label>
-                                        <input name="name" type="text" required placeholder="ENTRY NAME" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
+                                        <input name="name" type="text" required placeholder="ENTRY NAME" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-yellow-500 outline-none transition-colors font-sans" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Email Address</label>
-                                        <input name="email" type="email" required placeholder="EMAIL@DOMAIN.COM" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans" />
+                                        <input name="email" type="email" required placeholder="EMAIL@DOMAIN.COM" className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-yellow-500 outline-none transition-colors font-sans" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Primary Role</label>
-                                        <select name="role" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
+                                        <select name="role" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-yellow-500 outline-none transition-colors font-sans appearance-none">
                                             <option value="Batter">BATTER</option>
                                             <option value="Bowler">BOWLER</option>
                                             <option value="All-Rounder">ALL-ROUNDER</option>
@@ -144,7 +144,7 @@ export default function JoinUs() {
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Experience Level</label>
-                                        <select name="experience" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans appearance-none">
+                                        <select name="experience" required className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-yellow-500 outline-none transition-colors font-sans appearance-none">
                                             <option value="Amateur">AMATEUR</option>
                                             <option value="Intermediate">INTERMEDIATE</option>
                                             <option value="Advanced / Pro">ADVANCED / PRO</option>
@@ -154,13 +154,13 @@ export default function JoinUs() {
 
                                 <div className="space-y-2">
                                     <label className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Message / Notes</label>
-                                    <textarea name="message" rows={4} placeholder="ANY ADDITIONAL INFORMATION..." className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-cyan-500 outline-none transition-colors font-sans resize-none"></textarea>
+                                    <textarea name="message" rows={4} placeholder="ANY ADDITIONAL INFORMATION..." className="w-full bg-black border border-zinc-800 p-4 text-white focus:border-yellow-500 outline-none transition-colors font-sans resize-none"></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={status === 'SUBMITTING' || status === 'SUCCESS'}
-                                    className="w-full bg-cyan-500 text-black py-5 font-heading text-2xl uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all shadow-[0_0_30px_rgba(6,182,212,0.1)] group disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-yellow-500 text-black py-5 font-heading text-2xl uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-yellow-400 transition-all shadow-[0_0_30px_rgba(234,179,8,0.1)] group disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {status === 'IDLE' && <>SUBMIT FORM <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" /></>}
                                     {status === 'SUBMITTING' && 'TRANSMITTING...'}

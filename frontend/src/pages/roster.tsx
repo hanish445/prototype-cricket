@@ -8,7 +8,7 @@ export default function Roster() {
         switch (role) {
             case 'Batter': return 'bg-white text-black';
             case 'Bowler': return 'bg-red-600 text-white';
-            case 'All-rounder': return 'bg-cyan-500 text-black';
+            case 'All-rounder': return 'bg-yellow-500 text-black';
             case 'Wicket-keeper': return 'bg-zinc-700 text-white';
             default: return 'bg-zinc-800 text-white';
         }
@@ -40,9 +40,9 @@ export default function Roster() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                        className="mb-16 border-l-8 border-yellow-500 pl-6"
                     >
-                        <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">2026 <span className="text-cyan-400">Squad</span></h1>
+                        <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">2026 <span className="text-yellow-400">Squad</span></h1>
                         <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">Finalised Squad for 2026 season</p>
                     </motion.div>
 
@@ -56,17 +56,17 @@ export default function Roster() {
                             <motion.div
                                 key={player.id}
                                 variants={item}
-                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-cyan-500 transition-colors duration-200 group relative overflow-hidden flex flex-col"
+                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-yellow-500 transition-colors duration-200 group relative overflow-hidden flex flex-col"
                             >
 
                                 {/* ID Number */}
-                                <div className="absolute top-4 left-4 text-zinc-700 font-heading text-3xl opacity-50 z-0 group-hover:text-cyan-900 transition-colors">
+                                <div className="absolute top-4 left-4 text-zinc-700 font-heading text-3xl opacity-50 z-0 group-hover:text-yellow-900 transition-colors">
                                     {String(player.id).padStart(2, '0')}
                                 </div>
 
                                 {/* Header Profile Section */}
                                 <div className="p-8 pb-6 flex flex-col items-center border-b border-zinc-800 relative z-10 bg-zinc-900/50 group-hover:bg-zinc-900 transition-colors">
-                                    <div className="w-20 h-20 bg-zinc-950 border-2 border-zinc-700 flex items-center justify-center mb-6 text-zinc-500 group-hover:text-cyan-400 group-hover:border-cyan-500 transition-colors">
+                                    <div className="w-20 h-20 bg-zinc-950 border-2 border-zinc-700 flex items-center justify-center mb-6 text-zinc-500 group-hover:text-yellow-400 group-hover:border-yellow-500 transition-colors">
                                         <User size={32} />
                                     </div>
                                     <h3 className="font-heading text-2xl text-white text-center uppercase tracking-wide leading-none">{player.name}</h3>
@@ -88,49 +88,49 @@ export default function Roster() {
 
                                         {player.stats.matches !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Crosshair className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> MATCHES</span>
+                                                <span className="flex items-center gap-3"><Crosshair className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> MATCHES</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.matches}</span>
                                             </li>
                                         )}
 
                                         {player.stats.runs !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> RUNS</span>
+                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> RUNS</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.runs}</span>
                                             </li>
                                         )}
 
                                         {player.stats.highScore !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> HIGH SCORE</span>
+                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> HIGH SCORE</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.highScore}</span>
                                             </li>
                                         )}
 
                                         {player.stats.average !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Target className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> AVERAGE</span>
+                                                <span className="flex items-center gap-3"><Target className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> AVERAGE</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.average}</span>
                                             </li>
                                         )}
 
                                         {player.stats.wickets !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Shield className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> WICKETS</span>
+                                                <span className="flex items-center gap-3"><Shield className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> WICKETS</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.wickets}</span>
                                             </li>
                                         )}
 
                                         {player.stats.bestBowling !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> BEST BOWL</span>
+                                                <span className="flex items-center gap-3"><Trophy className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> BEST BOWL</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.bestBowling}</span>
                                             </li>
                                         )}
 
                                         {player.stats.economy !== undefined && (
                                             <li className="flex items-center justify-between py-2 border-b border-zinc-800/50">
-                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-cyan-500/50" /> ECONOMY</span>
+                                                <span className="flex items-center gap-3"><Activity className="w-4 h-4 text-zinc-600 group-hover:text-yellow-500/50" /> ECONOMY</span>
                                                 <span className="text-white font-heading text-xl">{player.stats.economy}</span>
                                             </li>
                                         )}

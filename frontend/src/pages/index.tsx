@@ -8,7 +8,7 @@ export default function Home() {
           <title>DORTMUND CXI</title>
         </Head>
 
-        <section className="relative bg-black text-white py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center overflow-hidden border-b-[12px] border-cyan-500">
+        <section className="relative bg-black text-white py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center overflow-hidden border-b-[12px] border-yellow-500">
           <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -36,12 +36,12 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
               {/* Left Column: Massive Establishing Text */}
-              <div className="lg:col-span-5 flex flex-col justify-center border-l-8 border-cyan-500 pl-8">
+              <div className="lg:col-span-5 flex flex-col justify-center border-l-8 border-yellow-500 pl-8">
                 <h2 className="font-heading text-5xl md:text-6xl text-white tracking-tighter uppercase leading-none mb-6">
-                  FROM SUNDAY <br />
-                  <span className="text-zinc-600">RITUAL TO</span> <br />
-                  <span className="text-cyan-400">RELENTLESS</span> <br />
-                  PURSUIT
+                  THE SPIRIT OF <br />
+                  <span className="text-zinc-600">CRICKET IN</span> <br />
+                  <span className="text-yellow-400">THE HEART OF</span> <br />
+                  DORTMUND
                 </h2>
               </div>
 
@@ -50,15 +50,15 @@ export default function Home() {
 
                 <div className="bg-black border border-zinc-800 p-8 hover:border-zinc-700 transition-colors">
                   <p className="text-zinc-300 leading-relaxed font-light tracking-wide">
-                    <strong className="text-white font-bold tracking-widest uppercase text-sm mr-2">PHASE 01: THE ROOTS.</strong>
-                    It didn't start in a corporate boardroom or a state-of-the-art academy. Dortmund Cricket XI was born on Sunday mornings. We were a collective of players driven by a shared obsession for the game, playing for fun, pride, and the love of the sport. But as the weekends passed, the competitive drive demanded more than just a casual hit.
+                    <strong className="text-white font-bold tracking-widest uppercase text-sm mr-2">OUR STORY.</strong>
+                    Dortmund Cricket XI was born out of a pure love for the game. What started as friendly Sunday matches among passionate expats and locals quickly blossomed into a dedicated community. We play to celebrate the rich traditions of cricket, foster lifelong friendships, and bring a slice of home to the pitches of Germany.
                   </p>
                 </div>
 
-                <div className="bg-black border border-zinc-800 p-8 border-l-4 border-l-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.05)]">
+                <div className="bg-black border border-zinc-800 p-8 border-l-4 border-l-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.05)]">
                   <p className="text-zinc-300 leading-relaxed font-light tracking-wide">
-                    <strong className="text-cyan-400 font-bold tracking-widest uppercase text-sm mr-2">PHASE 02: THE DIRECTIVE.</strong>
-                    In 2026, we formalized the vision. We evolved from weekend warriors into a disciplined, tactical unit. Our goal is absolute: to elevate the standard of local cricket, foster raw talent, and build a brotherhood that plays a fierce, uncompromising brand of cricket. We aren't just here to participate. We are building a system designed to dominate.
+                    <strong className="text-yellow-400 font-bold tracking-widest uppercase text-sm mr-2">OUR VISION.</strong>
+                    Moving forward, we aim to elevate local cricket by creating an inclusive, welcoming environment for players of all skill levels. Whether you are an experienced cricketer looking for competitive matches or a newcomer eager to learn the gentleman's game, our club is focused on nurturing talent, sportsmanship, and the joy of playing together.
                   </p>
                 </div>
 

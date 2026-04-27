@@ -18,7 +18,7 @@ export default function Contact() {
             name: 'Aman Batra',
             role: 'Vice President',
             phone: '+49 176 37006828',
-            email: 'amam.pmp@gmail.com',
+            email: 'aman.pmp@gmail.com',
             timings: '18:00 - 20:00'
         },
         {
@@ -90,10 +90,10 @@ export default function Contact() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                        className="mb-16 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">
-                            Command <span className="text-cyan-400">Center</span>
+                            Command <span className="text-yellow-400">Center</span>
                         </h1>
                         <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">
                             Contacts to Dortmund Cricket XI administration.
@@ -111,11 +111,11 @@ export default function Contact() {
                             <motion.div
                                 key={person.id}
                                 variants={item}
-                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-cyan-500 transition-colors duration-200 group relative flex flex-col"
+                                className="bg-zinc-950 border-2 border-zinc-800 hover:border-yellow-500 transition-colors duration-200 group relative flex flex-col"
                             >
 
                                 {/* ID Tag */}
-                                <div className="absolute top-0 right-0 bg-zinc-900 text-zinc-500 font-heading text-xl px-3 py-1 border-b-2 border-l-2 border-zinc-800 group-hover:border-cyan-500 group-hover:text-cyan-400 group-hover:bg-cyan-500/10 transition-colors">
+                                <div className="absolute top-0 right-0 bg-zinc-900 text-zinc-500 font-heading text-xl px-3 py-1 border-b-2 border-l-2 border-zinc-800 group-hover:border-yellow-500 group-hover:text-yellow-400 group-hover:bg-yellow-500/10 transition-colors">
                                     {person.id}
                                 </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
                                     <div className="flex items-center gap-3 mb-3">
                                         <h3 className="font-heading text-2xl text-white uppercase tracking-wide leading-none">{person.name}</h3>
                                     </div>
-                                    <span className="inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-widest border border-cyan-500/20">
+                                    <span className="inline-block px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs font-bold uppercase tracking-widest border border-yellow-500/20">
                                         {person.role}
                                     </span>
                                 </div>
@@ -133,17 +133,17 @@ export default function Contact() {
                                 <div className="p-6 flex-grow flex flex-col justify-end bg-black">
                                     <ul className="space-y-4 text-sm text-zinc-400 uppercase tracking-widest font-bold">
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
-                                            <Phone className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
+                                            <Phone className="w-5 h-5 text-zinc-600 group-hover/item:text-yellow-400 transition-colors" />
                                             <span className="font-sans">{person.phone}</span>
                                         </li>
 
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
-                                            <Mail className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
+                                            <Mail className="w-5 h-5 text-zinc-600 group-hover/item:text-yellow-400 transition-colors" />
                                             <span className="font-sans lowercase tracking-wider">{person.email}</span>
                                         </li>
 
                                         <li className="flex items-center gap-4 group/item hover:text-white transition-colors">
-                                            <Clock className="w-5 h-5 text-zinc-600 group-hover/item:text-cyan-400 transition-colors" />
+                                            <Clock className="w-5 h-5 text-zinc-600 group-hover/item:text-yellow-400 transition-colors" />
                                             <span className="font-sans">{person.timings}</span>
                                         </li>
                                     </ul>

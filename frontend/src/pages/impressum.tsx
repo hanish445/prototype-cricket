@@ -15,10 +15,10 @@ export default function Impressum() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                        className="mb-16 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">
-                            Legal <span className="text-cyan-400">Notice</span>
+                            Legal <span className="text-yellow-400">Notice</span>
                         </h1>
                         <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">
                             Impressum according to § 5 TMG
@@ -37,7 +37,7 @@ export default function Impressum() {
                                 Provider Information
                             </h2>
                             <div className="space-y-2 uppercase tracking-widest text-xs leading-relaxed font-bold">
-                                <p className="text-cyan-400 text-lg mb-4">Dortmund Cricket XI</p>
+                                <p className="text-yellow-400 text-lg mb-4">Dortmund Cricket XI</p>
                                 <p>[Street Address of Club / President]</p>
                                 <p>[Zip Code] Dortmund</p>
                                 <p>Germany</p>
@@ -63,7 +63,7 @@ export default function Impressum() {
                                     <p>----------------------------------------------------</p>
                                     <span>Email:</span>
                                     <p className="lowercase">shekar3m@gmail.com</p>
-                                    <p className="lowercase">amam.pmp@gmail.com</p>
+                                    <p className="lowercase">aman.pmp@gmail.com</p>
                                 </div>
                             </div>
                         </section>
@@ -81,12 +81,12 @@ export default function Impressum() {
                         </section>
 
                         <section className="mt-16 pt-8 border-t-2 border-zinc-900 flex flex-col items-center text-center">
-                            <Code2 className="w-8 h-8 text-cyan-500 mb-4" />
+                            <Code2 className="w-8 h-8 text-yellow-500 mb-4" />
                             <h3 className="text-zinc-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-2">
                                 WEBSITE MANAGEMENT
                             </h3>
                             <p className="text-white font-heading text-2xl uppercase tracking-widest">
-                                Developed by <span className="text-cyan-400">Hanish Madasu</span>
+                                Developed by <span className="text-yellow-400">Hanish Madasu</span>
                             </p>
                         </section>
 

@@ -15,10 +15,10 @@ export default function Datenschutz() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="mb-16 border-l-8 border-cyan-500 pl-6"
+                        className="mb-16 border-l-8 border-yellow-500 pl-6"
                     >
                         <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-2 tracking-tighter uppercase">
-                            Privacy <span className="text-cyan-400">Policy</span>
+                            Privacy <span className="text-yellow-400">Policy</span>
                         </h1>
                         <p className="text-lg text-zinc-500 max-w-2xl uppercase tracking-wide">
                             Datenschutzerklärung (GDPR / DSGVO Compliant)
@@ -32,8 +32,8 @@ export default function Datenschutz() {
                         className="space-y-8 text-zinc-400 font-sans text-sm leading-relaxed"
                     >
                         {/* Intro / Legal Shield Icon */}
-                        <div className="flex items-center gap-4 p-6 bg-cyan-500/5 border border-cyan-500/20 mb-8">
-                            <ShieldCheck className="w-10 h-10 text-cyan-500 shrink-0" />
+                        <div className="flex items-center gap-4 p-6 bg-yellow-500/5 border border-yellow-500/20 mb-8">
+                            <ShieldCheck className="w-10 h-10 text-yellow-500 shrink-0" />
                             <p className="uppercase tracking-wider text-xs font-bold text-zinc-300">
                                 Note: This is a provisional privacy policy for the prototype phase. Upon official launch, this text should be reviewed by a legal entity or generated via a certified German DSGVO generator (e.g., eRecht24).
                             </p>
